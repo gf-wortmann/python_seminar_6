@@ -10,3 +10,4 @@ members_count = int(input('Enter the count of members of the progression : '))
 sequence = [start_value + sequence_diff*(i) for i in range(members_count)]
 
 print(sequence)
+
