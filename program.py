@@ -1,13 +1,21 @@
-# Задача 30:  Заполните массив элементами арифметической прогрессии.
-# Её первый элемент, разность и количество элементов нужно ввести с клавиатуры.
-# Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
-# Каждое число вводится с новой строки.
+# Задача 32: Определить индексы элементов массива (списка), значения которых принадлежат заданному диапазону
+# (т.е. не меньше заданного минимума и не больше заданного максимума)
 
-start_value = int(input('Enter the initial number of the progression : '))
-sequence_diff = int(input('Enter the difference number of the progression : '))
-members_count = int(input('Enter the count of members of the progression : '))
+from random import randrange
 
-sequence = [start_value + sequence_diff*(i) for i in range(members_count)]
 
-print(sequence)
+max_limit = int(input("Enter the max limit value (non negative) : "))
+min_limit = int(input("Enter the min limit value (non negative) : "))
+
+random_array = [randrange(0, max_limit) for i in range(max_limit * 2)]
+print(random_array)
+
+indexes_list = dict()
+
+for i in range(len(random_array)):
+    if min_limit <= random_array[i] <= max_limit:
+        indexes_list[i] = random_array[i]
+
+
+print(indexes_list)
 
